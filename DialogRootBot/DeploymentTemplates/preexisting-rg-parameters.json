@@ -34,7 +34,7 @@
         },
         "existingAppServicePlanResourceGroup": {
             "value": ""
-        },        
+        },
         "newWebAppName": {
             "value": ""
         }

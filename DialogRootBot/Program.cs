@@ -3,8 +3,9 @@
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-namespace Microsoft.BotBuilderSamples.DialogRootBot
+namespace Microsoft.BotBuilderSamples.SimpleRootBot
 {
     public class Program
     {
@@ -17,6 +18,11 @@ namespace Microsoft.BotBuilderSamples.DialogRootBot
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureLogging((logging) =>
+                    {
+                        logging.AddDebug();
+                        logging.AddConsole();
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }

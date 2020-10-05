@@ -3,8 +3,9 @@
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-namespace Microsoft.BotBuilderSamples.DialogSkillBot
+namespace Microsoft.BotBuilderSamples.EchoSkillBot
 {
     public class Program
     {
@@ -17,6 +18,11 @@ namespace Microsoft.BotBuilderSamples.DialogSkillBot
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureLogging((logging) =>
+                    {
+                        logging.AddDebug();
+                        logging.AddConsole();
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
