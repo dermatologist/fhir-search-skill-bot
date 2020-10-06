@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 
-namespace Microsoft.BotBuilderSamples.EchoSkillBot.Bots
+namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot.Bots
 {
-    public class EchoBot : ActivityHandler
+    public class FhirSearchBot : ActivityHandler
     {
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {

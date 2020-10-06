@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:39783/",
+      "applicationUrl": "http://0.0.0.0:39783/",
       "sslPort": 0
     }
   },
@@ -16,10 +16,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "EchoSkillBot": {
+    "FhirSearchSkillBot": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:1205/",
+      "applicationUrl": "http://0.0.0.0:39783/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

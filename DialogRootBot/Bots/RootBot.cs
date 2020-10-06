@@ -36,14 +36,14 @@ namespace Microsoft.BotBuilderSamples.SimpleRootBot.Bots
                 throw new ArgumentNullException(nameof(configuration));
             }
 
-            _botId = configuration.GetSection(MicrosoftAppCredentials.MicrosoftAppIdKey)?.Value;
-            if (string.IsNullOrWhiteSpace(_botId))
-            {
-                throw new ArgumentException($"{MicrosoftAppCredentials.MicrosoftAppIdKey} is not set in configuration");
-            }
+            // _botId = configuration.GetSection(MicrosoftAppCredentials.MicrosoftAppIdKey)?.Value;
+            // if (string.IsNullOrWhiteSpace(_botId))
+            // {
+            //     throw new ArgumentException($"{MicrosoftAppCredentials.MicrosoftAppIdKey} is not set in configuration");
+            // }
 
             // We use a single skill in this example.
-            var targetSkillId = "EchoSkillBot";
+            var targetSkillId = "FhirSearchSkillBot";
             if (!_skillsConfig.Skills.TryGetValue(targetSkillId, out _targetSkill))
             {
                 throw new ArgumentException($"Skill with ID \"{targetSkillId}\" not found in configuration");

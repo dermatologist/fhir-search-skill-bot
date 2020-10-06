@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DialogRootBot", "DialogRootBot\DialogRootBot.csproj", "{B1A6DEC7-289C-4D43-98E0-4DF8F3FCA54B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DialogSkillBot", "DialogSkillBot\DialogSkillBot.csproj", "{5EE77148-FC9B-4B51-9F82-EB274CC99015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhirSearchSkillBot", "FhirSearchSkillBot\FhirSearchSkillBot.csproj", "{5EE77148-FC9B-4B51-9F82-EB274CC99015}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{09E72AFA-6A09-4614-8E52-5936E1B71BFE}"
 	ProjectSection(SolutionItems) = preProject
