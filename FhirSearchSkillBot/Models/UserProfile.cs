@@ -6,5 +6,4 @@ public class UserProfile
 
     public int Age { get; set; }
 
-    public Attachment Picture { get; set; }
 }
