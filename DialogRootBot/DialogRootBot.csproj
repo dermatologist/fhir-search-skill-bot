@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <AssemblyName>Microsoft.BotBuilderSamples.SimpleRootBot</AssemblyName>
-    <RootNamespace>Microsoft.BotBuilderSamples.SimpleRootBot</RootNamespace>
+    <AssemblyName>Nuchange.HealthBots.SimpleRootBot</AssemblyName>
+    <RootNamespace>Nuchange.HealthBots.SimpleRootBot</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

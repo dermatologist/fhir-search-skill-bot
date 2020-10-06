@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Microsoft.BotBuilderSamples.SimpleRootBot
+namespace Nuchange.HealthBots.SimpleRootBot
 {
     public class Program
     {

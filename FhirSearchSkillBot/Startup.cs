@@ -7,13 +7,13 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.BotFramework;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Connector.Authentication;
-using Microsoft.BotBuilderSamples.FhirSearchSkillBot.Authentication;
-using Microsoft.BotBuilderSamples.FhirSearchSkillBot.Bots;
+using Nuchange.HealthBots.FhirSearchSkillBot.Authentication;
+using Nuchange.HealthBots.FhirSearchSkillBot.Bots;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot
+namespace Nuchange.HealthBots.FhirSearchSkillBot
 {
     public class Startup
     {
@@ -31,6 +31,9 @@ namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot
             // Create the Bot Framework Adapter with error handling enabled.
             services.AddSingleton<IBotFrameworkHttpAdapter, SkillAdapterWithErrorHandler>();
 
+            // The Dialog that will be run by the bot.
+            services.AddSingleton<UserProfileDialog>();
+            
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
             services.AddTransient<IBot, FhirSearchBot>();
         }

@@ -9,12 +9,12 @@ using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Builder.Integration.AspNet.Core.Skills;
 using Microsoft.Bot.Builder.Skills;
 using Microsoft.Bot.Connector.Authentication;
-using Microsoft.BotBuilderSamples.SimpleRootBot.Authentication;
-using Microsoft.BotBuilderSamples.SimpleRootBot.Bots;
+using Nuchange.HealthBots.SimpleRootBot.Authentication;
+using Nuchange.HealthBots.SimpleRootBot.Bots;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Microsoft.BotBuilderSamples.SimpleRootBot
+namespace Nuchange.HealthBots.SimpleRootBot
 {
     public class Startup
     {

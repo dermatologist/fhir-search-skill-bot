@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 
-namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot.Bots
+namespace Nuchange.HealthBots.FhirSearchSkillBot.Bots
 {
     public class FhirSearchBot : ActivityHandler
     {

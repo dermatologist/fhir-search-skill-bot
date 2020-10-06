@@ -11,7 +11,7 @@ using Microsoft.Bot.Builder.Dialogs.Choices;
 using Microsoft.Bot.Connector;
 using Microsoft.Bot.Schema;
 
-namespace Microsoft.BotBuilderSamples
+namespace Nuchange.HealthBots
 {
     public class UserProfileDialog : ComponentDialog
     {
