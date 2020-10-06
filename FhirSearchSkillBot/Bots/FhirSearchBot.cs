@@ -23,6 +23,9 @@ namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot.Bots
             }
             else
             {
+                // var entity = turnContext.Activity.Entities.GetEnumerator();
+                // var messageText = $"Entities: {entity.Current}";
+                // await turnContext.SendActivityAsync(MessageFactory.Text(messageText, messageText, InputHints.IgnoringInput), cancellationToken);
                 var messageText = $"Echo: {turnContext.Activity.Text}";
                 await turnContext.SendActivityAsync(MessageFactory.Text(messageText, messageText, InputHints.IgnoringInput), cancellationToken);
                 messageText = "Say \"end\" or \"stop\" and I'll end the conversation and back to the parent.";
