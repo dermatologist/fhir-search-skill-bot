@@ -42,7 +42,7 @@ namespace FhirSearchSkillBot.Models
             SearchParam = new List<string>();
             SearchQualifier = new List<string>();
             SearchValue = new List<string>();
-
+            BaseUrl = @"http://hapi.fhir.org/baseR4/";
         }
 
         /// <summary>

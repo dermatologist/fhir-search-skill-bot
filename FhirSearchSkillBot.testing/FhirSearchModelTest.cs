@@ -9,7 +9,8 @@ namespace FhirSearchSkillBot.testing
         public void TestModel()
         {
             var _fhirSearchModel = new FhirSearchModel();
-            _fhirSearchModel.BaseUrl = @"http://hapi.fhir.org/baseR4/";
+            // Default setting in model constructor
+            // _fhirSearchModel.BaseUrl = @"http://hapi.fhir.org/baseR4/";
             _fhirSearchModel.Patient = "585457";
             _fhirSearchModel.SearchResource = "Encounter";
             _fhirSearchModel.SearchParam.Add("_date");
@@ -22,7 +23,7 @@ namespace FhirSearchSkillBot.testing
         public void TestApi()
         {
             var _fhirSearchModel = new FhirSearchModel();
-            _fhirSearchModel.BaseUrl = @"http://hapi.fhir.org/baseR4/";
+            // _fhirSearchModel.BaseUrl = @"http://hapi.fhir.org/baseR4/";
             _fhirSearchModel.Patient = "585457";
             _fhirSearchModel.SearchResource = "Encounter";
             _fhirSearchModel.SearchParam.Add("_date");
