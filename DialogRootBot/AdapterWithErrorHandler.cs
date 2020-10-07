@@ -11,11 +11,11 @@ using Microsoft.Bot.Builder.Skills;
 using Microsoft.Bot.Builder.TraceExtensions;
 using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Bot.Schema;
-using Nuchange.HealthBots.SimpleRootBot.Bots;
+using SimpleRootBot.Bots;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Nuchange.HealthBots.SimpleRootBot
+namespace SimpleRootBot
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {

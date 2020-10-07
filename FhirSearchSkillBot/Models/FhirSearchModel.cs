@@ -4,7 +4,7 @@
 
 */
 using System.Collections.Generic;
-namespace Nuchange.HealthBots.FhirSearchSkillBot.Models
+namespace FhirSearchSkillBot.Models
 {
     /// <summary>
     /// FHIR Search Model Class

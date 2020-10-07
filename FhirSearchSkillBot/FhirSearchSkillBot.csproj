@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <AssemblyName>Nuchange.HealthBots.FhirSearchSkillBot</AssemblyName>
-    <RootNamespace>Nuchange.HealthBots.FhirSearchSkillBot</RootNamespace>
+    <AssemblyName>FhirSearchSkillBot</AssemblyName>
+    <RootNamespace>FhirSearchSkillBot</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

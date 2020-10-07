@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/FhirSearchSkillBot/bin/Debug/netcoreapp3.1/Nuchange.HealthBots.FhirSearchSkillBot.dll",
+            "program": "${workspaceFolder}/FhirSearchSkillBot/bin/Debug/netcoreapp3.1/FhirSearchSkillBot.dll",
             "args": [],
             "cwd": "${workspaceFolder}/FhirSearchSkillBot",
             "stopAtEntry": false,

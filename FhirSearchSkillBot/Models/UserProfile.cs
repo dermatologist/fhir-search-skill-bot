@@ -1,9 +1,12 @@
-public class UserProfile
+namespace FhirSearchSkillBot.Models
 {
-    public string Transport { get; set; }
+    public class UserProfile
+    {
+        public string Transport { get; set; }
 
-    public string Name { get; set; }
+        public string Name { get; set; }
 
-    public int Age { get; set; }
+        public int Age { get; set; }
 
+    }
 }

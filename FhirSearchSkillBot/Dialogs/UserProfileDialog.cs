@@ -10,9 +10,9 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
 using Microsoft.Bot.Connector;
 using Microsoft.Bot.Schema;
-using Nuchange.HealthBots.FhirSearchSkillBot.Bots;
-
-namespace Nuchange.HealthBots
+using FhirSearchSkillBot.Bots;
+using FhirSearchSkillBot.Models;
+namespace FhirSearchSkillBot.Dialogs
 {
     public class UserProfileDialog : ComponentDialog
     {
