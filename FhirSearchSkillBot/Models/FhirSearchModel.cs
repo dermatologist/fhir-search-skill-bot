@@ -4,6 +4,10 @@
 
 */
 using System.Collections.Generic;
+//Request library
+using System.Net;
+using System.IO;
+
 namespace FhirSearchSkillBot.Models
 {
     /// <summary>
@@ -65,7 +69,23 @@ namespace FhirSearchSkillBot.Models
             }
         }
 
-        
+        public string FhirSearch {
+            get{
+                string fhirJson = string.Empty;
+                string url = FhirSearchString;
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.AutomaticDecompression = DecompressionMethods.GZip;
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (Stream stream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    fhirJson = reader.ReadToEnd();
+                }
+                return fhirJson;
+            }
+        }        
 
     }
 }
