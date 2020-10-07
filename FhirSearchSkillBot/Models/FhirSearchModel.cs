@@ -1,11 +1,26 @@
+/**
+
+@author: beapen
+
+*/
 using System.Collections.Generic;
-public class FhirSearchModel
+namespace Nuchange.HealthBots.FhirSearchSkillBot.Models
 {
+    /// <summary>
+    /// FHIR Search Model Class
+    /// </summary>
+    public class FhirSearchModel
+    {
     public string BaseUrl { get; set; }
-    // Patient ID if the search has _subject or Resource is Patient
+
+    /// <summary>
+    /// Patient ID if the search has _subject or Resource is Patient
+    /// </summary>
     public string Patient { get; set; }
 
-    // The FHIR resource that is being searched
+    /// <summary>
+    /// The FHIR resource that is being searched
+    /// </summary>
     public string SearchResource { get; set; }
 
     public List<string> SearchParam { get; set; }
@@ -33,5 +48,5 @@ public class FhirSearchModel
         }
     }
 
-
+    }
 }
