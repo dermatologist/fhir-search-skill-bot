@@ -30,7 +30,7 @@ namespace FhirSearchSkillBot.Models
 
         public List<string> SearchParam { get; set; }
 
-        public List<string> SearchQualifier { get; set; }
+        public List<string> SearchOperator { get; set; }
 
         public List<string> SearchValue { get; set; }
         
@@ -40,7 +40,7 @@ namespace FhirSearchSkillBot.Models
         public FhirSearchModel()
         {
             SearchParam = new List<string>();
-            SearchQualifier = new List<string>();
+            SearchOperator = new List<string>();
             SearchValue = new List<string>();
             BaseUrl = @"http://hapi.fhir.org/baseR4/";
         }
@@ -59,7 +59,7 @@ namespace FhirSearchSkillBot.Models
                     _fhirSearchString += SearchResource + "?";
                     // Iteratively add all search parameters
                     for (int i = 0; i < SearchParam.Count; i++){
-                        _fhirSearchString += SearchParam[i] + SearchQualifier[i] + SearchValue[i] + "&";
+                        _fhirSearchString += SearchParam[i] + SearchOperator[i] + SearchValue[i] + "&";
                     }
                     if (Patient != null)
                     {
