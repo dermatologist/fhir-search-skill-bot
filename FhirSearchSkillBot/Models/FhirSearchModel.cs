@@ -7,7 +7,8 @@ using System.Collections.Generic;
 //Request library
 using System.Net;
 using System.IO;
-
+using Hl7.Fhir.Model;
+using Hl7.Fhir.Serialization;
 namespace FhirSearchSkillBot.Models
 {
     /// <summary>
@@ -33,6 +34,8 @@ namespace FhirSearchSkillBot.Models
         public List<string> SearchOperator { get; set; }
 
         public List<string> SearchValue { get; set; }
+
+        public Bundle SearchResultBundle { get; set;}
         
         
         private string _fhirSearchString = "";
@@ -83,6 +86,8 @@ namespace FhirSearchSkillBot.Models
                 {
                     fhirJson = reader.ReadToEnd();
                 }
+                var parser = new FhirJsonParser();
+                SearchResultBundle = parser.Parse<Bundle>(fhirJson);
                 return fhirJson;
             }
         }        

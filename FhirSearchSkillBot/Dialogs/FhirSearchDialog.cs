@@ -114,7 +114,7 @@ namespace FhirSearchSkillBot.Dialogs
         {
             stepContext.Values["value"] = (string)stepContext.Result;
 
-            // Get the current profile object from user state.
+            // Get the current profile object from user state. (New if no value is set)
             var fhirSearchModel = await _userProfileAccessor.GetAsync(stepContext.Context, () => new FhirSearchModel(), cancellationToken);
 
             if((string)stepContext.Values["patientId"] != "no") fhirSearchModel.Patient = (string)stepContext.Values["patientId"];
@@ -124,13 +124,17 @@ namespace FhirSearchSkillBot.Dialogs
             if((string)stepContext.Values["value"] != "no") fhirSearchModel.SearchValue.Add((string)stepContext.Values["value"]);
 
 
-            var msg = $"I am going to search {fhirSearchModel.FhirSearchString}";
+            var msg = $"I am going to search {fhirSearchModel.FhirSearchString} and save the results!";
 
             msg += ".";
 
+            // Perform search and save it in the Bundle inside fhirSearchModel
+            var _discard = fhirSearchModel.FhirSearch;
             await stepContext.Context.SendActivityAsync(MessageFactory.Text(msg), cancellationToken);
 
-
+            // Save the updated model
+            // https://docs.microsoft.com/en-us/dotnet/api/microsoft.bot.builder.istatepropertyaccessor-1.setasync?view=botbuilder-dotnet-stable
+            await _userProfileAccessor.SetAsync(stepContext.Context, fhirSearchModel, cancellationToken);
             // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is the end.
             return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
         }
