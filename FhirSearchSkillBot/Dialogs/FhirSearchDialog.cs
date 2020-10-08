@@ -70,7 +70,7 @@ namespace FhirSearchSkillBot.Dialogs
                 await stepContext.Context.SendActivityAsync(
                     MessageFactory.Text("Ok, continuing without a patient ID"),
                     cancellationToken);
-                return await stepContext.NextAsync("", cancellationToken);
+                return await stepContext.NextAsync("no", cancellationToken);
             }
             else
             {
@@ -114,30 +114,22 @@ namespace FhirSearchSkillBot.Dialogs
         {
             stepContext.Values["value"] = (string)stepContext.Result;
 
-            if ((bool)stepContext.Result)
-            {
-                // Get the current profile object from user state.
-                var fhirSearchModel = await _userProfileAccessor.GetAsync(stepContext.Context, () => new FhirSearchModel(), cancellationToken);
+            // Get the current profile object from user state.
+            var fhirSearchModel = await _userProfileAccessor.GetAsync(stepContext.Context, () => new FhirSearchModel(), cancellationToken);
 
-                if((string)stepContext.Values["patientId"] != "") fhirSearchModel.Patient = (string)stepContext.Values["patientId"];
-                if((string)stepContext.Values["resource"] != "") fhirSearchModel.SearchResource = (string)stepContext.Values["resource"];
-                if((string)stepContext.Values["param"] != "") fhirSearchModel.SearchParam.Add((string)stepContext.Values["param"]);
-                if((string)stepContext.Values["operator"] != "") fhirSearchModel.SearchOperator.Add((string)stepContext.Values["operator"]);
-                if((string)stepContext.Values["value"] != "") fhirSearchModel.SearchValue.Add((string)stepContext.Values["value"]);
+            if((string)stepContext.Values["patientId"] != "no") fhirSearchModel.Patient = (string)stepContext.Values["patientId"];
+            if((string)stepContext.Values["resource"] != "no") fhirSearchModel.SearchResource = (string)stepContext.Values["resource"];
+            if((string)stepContext.Values["param"] != "no") fhirSearchModel.SearchParam.Add((string)stepContext.Values["param"]);
+            if((string)stepContext.Values["operator"] != "no") fhirSearchModel.SearchOperator.Add((string)stepContext.Values["operator"]);
+            if((string)stepContext.Values["value"] != "no") fhirSearchModel.SearchValue.Add((string)stepContext.Values["value"]);
 
 
-                var msg = $"I am going to search {fhirSearchModel.FhirSearchString}";
+            var msg = $"I am going to search {fhirSearchModel.FhirSearchString}";
 
-                msg += ".";
+            msg += ".";
 
-                await stepContext.Context.SendActivityAsync(MessageFactory.Text(msg), cancellationToken);
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text(msg), cancellationToken);
 
-
-            }
-            else
-            {
-                await stepContext.Context.SendActivityAsync(MessageFactory.Text("Thanks. Your profile will not be kept."), cancellationToken);
-            }
 
             // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is the end.
             return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
