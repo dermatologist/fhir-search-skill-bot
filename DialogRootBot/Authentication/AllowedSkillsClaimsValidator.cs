@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.Bot.Connector.Authentication;
 
-namespace Nuchange.HealthBots.SimpleRootBot.Authentication
+namespace SimpleRootBot.Authentication
 {
     /// <summary>
     /// Sample claims validator that loads an allowed list from configuration if present

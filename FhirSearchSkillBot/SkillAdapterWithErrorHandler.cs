@@ -11,7 +11,7 @@ using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Nuchange.HealthBots.FhirSearchSkillBot
+namespace FhirSearchSkillBot
 {
     public class SkillAdapterWithErrorHandler : BotFrameworkHttpAdapter
     {

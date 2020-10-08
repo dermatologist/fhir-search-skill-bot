@@ -7,13 +7,13 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.BotFramework;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Connector.Authentication;
-using Nuchange.HealthBots.FhirSearchSkillBot.Authentication;
-using Nuchange.HealthBots.FhirSearchSkillBot.Bots;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-namespace Nuchange.HealthBots.FhirSearchSkillBot
+using FhirSearchSkillBot.Authentication;
+using FhirSearchSkillBot.Bots;
+using FhirSearchSkillBot.Dialogs;
+namespace FhirSearchSkillBot
 {
     public class Startup
     {
@@ -41,10 +41,10 @@ namespace Nuchange.HealthBots.FhirSearchSkillBot
             services.AddSingleton<ConversationState>();
 
             // The Dialog that will be run by the bot.
-            services.AddSingleton<UserProfileDialog>();
+            services.AddSingleton<FhirSearchDialog>();
             
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, FhirSearchBot<UserProfileDialog>>();
+            services.AddTransient<IBot, FhirSearchBot<FhirSearchDialog>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
