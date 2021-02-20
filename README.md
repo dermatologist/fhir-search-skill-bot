@@ -7,6 +7,8 @@ The [Microsoft Bot Framework SDK](https://docs.microsoft.com/en-us/azure/bot-ser
 
 This is experimental for now. Pull request, welcome!
 
+[Checkout a similar project using RASA](https://github.com/dermatologist/rasaonfhir)
+
 ## Author
 
 * [Bell Eapen](https://nuchange.ca) |  [Contact](https://nuchange.ca/contact) | [![Twitter Follow](https://img.shields.io/twitter/follow/beapen?style=social)](https://twitter.com/beapen)
