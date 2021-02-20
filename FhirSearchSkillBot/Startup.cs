@@ -7,13 +7,13 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.BotFramework;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Connector.Authentication;
-using Microsoft.BotBuilderSamples.FhirSearchSkillBot.Authentication;
-using Microsoft.BotBuilderSamples.FhirSearchSkillBot.Bots;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot
+using FhirSearchSkillBot.Authentication;
+using FhirSearchSkillBot.Bots;
+using FhirSearchSkillBot.Dialogs;
+namespace FhirSearchSkillBot
 {
     public class Startup
     {
@@ -31,8 +31,20 @@ namespace Microsoft.BotBuilderSamples.FhirSearchSkillBot
             // Create the Bot Framework Adapter with error handling enabled.
             services.AddSingleton<IBotFrameworkHttpAdapter, SkillAdapterWithErrorHandler>();
 
+            // Create the storage we'll be using for User and Conversation state. (Memory is great for testing purposes.)
+            services.AddSingleton<IStorage, MemoryStorage>();
+
+            // Create the User state. (Used in this bot's Dialog implementation.)
+            services.AddSingleton<UserState>();
+
+            // Create the Conversation state. (Used by the Dialog system itself.)
+            services.AddSingleton<ConversationState>();
+
+            // The Dialog that will be run by the bot.
+            services.AddSingleton<FhirSearchDialog>();
+            
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, FhirSearchBot>();
+            services.AddTransient<IBot, FhirSearchBot<FhirSearchDialog>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

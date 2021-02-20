@@ -9,12 +9,12 @@ using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Builder.Integration.AspNet.Core.Skills;
 using Microsoft.Bot.Builder.Skills;
 using Microsoft.Bot.Connector.Authentication;
-using Microsoft.BotBuilderSamples.SimpleRootBot.Authentication;
-using Microsoft.BotBuilderSamples.SimpleRootBot.Bots;
+using SimpleRootBot.Authentication;
+using SimpleRootBot.Bots;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Microsoft.BotBuilderSamples.SimpleRootBot
+namespace SimpleRootBot
 {
     public class Startup
     {
